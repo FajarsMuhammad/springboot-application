@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head data-th-fragment="header">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="stylesheet" th:href="@{'/css/default-master.css'}" />
+
+<title>SpringBoot</title>
+</head>
+
+<body>
+
+	<div th:replace="layout :: top-nav"></div>
+	<div th:replace="layout :: vert-nav-admin"></div>
+	<div id="page-wrapper">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1>Welcomes</h1>
+			</div>
+		</div>
+	</div>
+
+	<div th:replace="base :: scripts"></div>
+</body>
+</html>

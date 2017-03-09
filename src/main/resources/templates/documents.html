@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<link rel="stylesheet" th:href="@{'/css/default-master.css'}" />
+
+<title>Documents</title>
+</head>
+<body>
+	<div id="wrapper">
+		<div th:replace="layout :: top-nav"></div>
+		<div th:replace="layout :: vert-nav-admin"></div>
+		<div id="page-wrapper">
+			<div class="row">
+				<div class="col-lg-12">
+
+					<h4 class="page-header">Document List</h4>
+					<form id="form" action="#" th:action="@{/documents}" method="get">
+						<div class="table responsive">
+							<table class="table table-striped table-bordered table-hover">
+								<thead>
+									<tr>
+										<th>Reference</th>
+										<th>Type</th>
+										<th>Status</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="document : ${documents}">
+										<td th:text="${document.reference}">reference</td>
+										<td th:text="${document.type}">reference</td>
+										<td th:text="${document.tags}">reference</td>
+										<td style="text-align: center;"><a href="#"
+											th:href="@{/document/edit(id=${document.uuid})}">
+												<button type="button" class="btn btn-default btn-xs">
+													<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Edit
+												</button>
+										</a> &nbsp; <a href="#"
+											th:href="@{/document/__${document.uuid}__/delete}">
+												<button type="button" class="btn btn-default btn-xs">
+													<span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;Delete
+												</button>
+										</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+					<div>
+						<a href="#" th:href="@{/document/add}">
+							<button type="submit" class="btn btn-primary">Add</button>
+						</a>
+					</div>
+					<br />
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="base :: scripts"></div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+{
+  "document": {
+    "properties": {
+       "@xmlns:pay": {
+          "type": "string"
+       },
+       "@xmlns:xchange3": {
+          "type": "string"
+       },
+       "@xmlns:xs": {
+          "type": "string"
+       },
+       "associateDocstores": {
+          "properties": {
+             "bank": {
+                "type": "string",
+                "analyzer": "keyword"
+             },
+             "buyer": {
+                "type": "string",
+                "analyzer": "keyword"
+             },
+             "customer": {
+                "type": "string",
+                "analyzer": "keyword"
+             },
+             "distributor": {
+                "type": "string",
+                "analyzer": "keyword"
+             },
+             "funder": {
+                "type": "string",
+                "analyzer": "keyword"
+             },
+             "principal": {
+                "type": "string",
+                "analyzer": "keyword"
+             },
+             "provider": {
+                "type": "string",
+                "analyzer": "keyword"
+             },
+             "seller": {
+                "type": "string",
+                "analyzer": "keyword"
+             },
+             "supplier": {
+                "type": "string",
+                "analyzer": "keyword"
+             }
+          }
+       },
+       "businessKey": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "buyerCode": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "buyerName": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "buyerPaymentInstructionUuid": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "dateReceived": {
+          "type": "date",
+          "format": "strict_date_optional_time||epoch_millis"
+       },
+       "distributorCode": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "extendedDate": {
+          "type": "date",
+          "format": "strict_date_optional_time||epoch_millis"
+       },
+       "factoringRequestUuid": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "labels": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "originalCurrency": {
+          "type": "string"
+       },
+       "ownerDocstore": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "paymentDate": {
+          "type": "date",
+          "format": "strict_date_optional_time||epoch_millis"
+       },
+       "proposalUuid": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "reference": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "sellerCode": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "supplierCode": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "supplierName": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "supplierRecourse": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "tags": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "totalAmount": {
+          "type": "double"
+       },
+       "type": {
+          "type": "string",
+          "analyzer": "keyword"
+       },
+       "uuid": {
+          "type": "string",
+          "analyzer": "keyword"
+       }
+    }
+  }
+}

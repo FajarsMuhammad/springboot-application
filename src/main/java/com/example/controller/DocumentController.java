@@ -30,6 +30,7 @@ import com.example.repository.DocumentSearchStore;
 @Controller
 public class DocumentController {
 
+    private static final String DOCUMENTS = "documents";
     @Autowired
     private DocumentSearchStore repository;
     @Resource
@@ -39,9 +40,9 @@ public class DocumentController {
     public String documents(ModelMap model) {
 
         Page<Document> documents = getDocuments();
-        model.put("documents", documents);
+        model.put(DOCUMENTS, documents);
 
-        return "documents";
+        return DOCUMENTS;
     }
 
     private Page<Document> getDocuments() {
@@ -80,9 +81,9 @@ public class DocumentController {
 
         repository.delete(document);
 
-        model.put("documents", getDocuments());
+        model.put(DOCUMENTS, getDocuments());
 
-        return "documents";
+        return DOCUMENTS;
 
     }
 

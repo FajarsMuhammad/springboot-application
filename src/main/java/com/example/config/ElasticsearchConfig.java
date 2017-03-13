@@ -26,11 +26,10 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 
 import com.example.settings.IndicesSettings;
 
-
 /**
  * @author fajars
  * @version 1.0, Mar 13, 2017
- * @since 
+ * @since
  */
 @Configuration
 @EnableElasticsearchRepositories({ "com.example.repository" })
@@ -38,8 +37,8 @@ public class ElasticsearchConfig {
     private static final Logger log = LoggerFactory
             .getLogger(ElasticsearchConfig.class);
 
-    public static final String INDEX_NAME = "xchange3";
-
+    public static final String INDEX_NAME = "example";
+    
     @Autowired
     private Environment env;
 
@@ -106,7 +105,7 @@ public class ElasticsearchConfig {
             try {
                 addresses.add(new InetSocketTransportAddress(InetAddress
                         .getByName(val.split(":")[0]), Integer.parseInt(val
-                        .split(":")[1])));
+                                .split(":")[1])));
             } catch (NumberFormatException | UnknownHostException e) {
                 log.warn("Unknown host: " + val.split(":")[0], e);
             }
@@ -115,18 +114,8 @@ public class ElasticsearchConfig {
     }
 
     @Bean
-    public String auditIndex() {
-        return indices.getAuditIndexPerDays(new Date());
-    }
-
-    @Bean
     public String documentIndex() {
         return indices.getIndexPerDays(new Date());
-    }
-
-    @Bean
-    public String billingDetailIndex() {
-        return indices.billingSearchIndex();
     }
 
     @Bean

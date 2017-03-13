@@ -23,37 +23,19 @@ import org.springframework.stereotype.Component;
 public class IndicesSettings {
 
     private static final String DOCUMENT_MAPPING = "/common_elastic/document_mapping.json";
-    private static final String BILLING_MAPPING = "/common_elastic/billing_mapping.json";
-    private static final String DEFAULT_DOCUMENT_INDEX = "xchange3";
+    private static final String DEFAULT_DOCUMENT_INDEX = "example";
     private static final String DOCUMENT_TYPE = "document";
-    private static final String BILLING_DETAIL_RECORD_TYPE = "billingdetailrecord";
     private static final String DATE_FORMAT = "yyyy.MM.dd";
-    private static final String AUDIT_INDEX_PERDAYS = "audit-";
 
     @Autowired
     private Environment environment;
 
-    public String auditSearchIndex() {
-        return environment.getProperty("elasticsearch.index.audit_search",
-                DEFAULT_DOCUMENT_INDEX);
-    }
-
-    public String billingSearchIndex() {
-        return environment.getProperty(
-                "elasticsearch.index.billing_detail_record",
-                DEFAULT_DOCUMENT_INDEX);
-    }
 
     public String documentSearchIndex() {
         return environment.getProperty("elasticsearch.index.document_search",
                 DEFAULT_DOCUMENT_INDEX);
     }
 
-    public String getAuditIndexPerDays(Date date) {
-        String indexName = environment.getProperty(
-                "elasticsearch.index.audit_perdays", AUDIT_INDEX_PERDAYS);
-        return indexName + getFormatIndex(date);
-    }
 
     public String getDefaultDocumentIndex() {
         return DEFAULT_DOCUMENT_INDEX;
@@ -85,18 +67,10 @@ public class IndicesSettings {
         return DEFAULT_DOCUMENT_INDEX;
     }
 
-    public String getMappingBilling() throws IOException {
-        return IOUtils.toString(
-                this.getClass().getResourceAsStream(BILLING_MAPPING), "utf8");
-    }
 
     public String getMappingDocuments() throws IOException {
         return IOUtils.toString(
                 this.getClass().getResourceAsStream(DOCUMENT_MAPPING), "utf8");
-    }
-
-    public String getTypeOfBillingDetail() {
-        return BILLING_DETAIL_RECORD_TYPE;
     }
 
     public String getTypeOfDocument() {

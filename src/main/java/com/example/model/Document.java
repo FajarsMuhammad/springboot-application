@@ -14,9 +14,9 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 import org.springframework.data.elasticsearch.annotations.Mapping;
 
 /**
- * @author frank
- * @version 1.0, Feb 8, 2014
- * @since 3.0.0
+ * @author fajars
+ * @version 1.0, Mar 13, 2017
+ * @since
  */
 @org.springframework.data.elasticsearch.annotations.Document(indexName = "#{@documentIndex}")
 @Mapping(mappingPath = "/common_elastic/document_mapping.json")

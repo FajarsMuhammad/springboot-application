@@ -18,7 +18,6 @@ import org.springframework.stereotype.Component;
 import com.example.model.Document;
 import com.example.settings.IndicesSettings;
 
-
 /**
  * @author fajars
  * @version 1.0, Jun 13, 2016
@@ -48,7 +47,7 @@ public class DocumentPerdaysRepository {
             String reference) {
         QueryBuilder query = QueryBuilders.termQuery("reference", reference);
         SearchQuery searchQuery = new NativeSearchQueryBuilder()
-                .withIndices(indices).withQuery(query).build();
+        .withIndices(indices).withQuery(query).build();
         Page<Document> documents = documentRepository.search(searchQuery);
         return documents.getContent();
     }
@@ -65,7 +64,7 @@ public class DocumentPerdaysRepository {
     public Document findOneWithIndices(String indices, String uuid) {
         QueryBuilder query = QueryBuilders.termQuery("uuid", uuid);
         SearchQuery searchQuery = new NativeSearchQueryBuilder()
-                .withIndices(indices).withQuery(query).build();
+        .withIndices(indices).withQuery(query).build();
         Page<Document> documents = documentRepository.search(searchQuery);
         return !documents.getContent().isEmpty() ? documents.getContent()
                 .get(0) : null;

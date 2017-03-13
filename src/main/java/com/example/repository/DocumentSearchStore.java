@@ -15,11 +15,10 @@ import org.springframework.stereotype.Component;
 import com.example.model.Document;
 import com.example.settings.IndicesSettings;
 
-
 /**
- * @author frank
- * @version 1.0, Feb 8, 2014
- * @since 3.0.0
+ * @author fajars
+ * @version 1.0, Mar 13, 2017
+ * @since
  */
 @Component
 public class DocumentSearchStore {
@@ -39,10 +38,10 @@ public class DocumentSearchStore {
         try {
             String indexName = indices.getIndexPerDays(document
                     .getDateReceived());
-            
+
             elasticsearchTemplate.delete(indexName, INDEX_TYPE, document
                     .getUuid().toString());
-            
+
             return true;
         } catch (Exception e) {
             log.warn("Elasticsearch exception during delete", e);

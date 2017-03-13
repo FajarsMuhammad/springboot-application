@@ -7,15 +7,14 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 
 import com.example.model.Document;
 
-
 /**
- * @author frank
- * @version 1.0, Feb 8, 2014
- * @since 3.0.0
+ * @author fajars
+ * @version 1.0, Mar 13, 2017
+ * @since
  */
 public interface DocumentRepository extends
         ElasticsearchRepository<Document, String> {
 
     List<Document> findByReference(String reference);
-    
+
 }

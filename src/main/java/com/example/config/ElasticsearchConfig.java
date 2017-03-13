@@ -26,10 +26,11 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 
 import com.example.settings.IndicesSettings;
 
+
 /**
- * @author frank
- * @version 1.0, Feb 8, 2014
- * @since 3.0.0
+ * @author fajars
+ * @version 1.0, Mar 13, 2017
+ * @since 
  */
 @Configuration
 @EnableElasticsearchRepositories({ "com.example.repository" })
